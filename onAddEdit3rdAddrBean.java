@@ -16,6 +16,7 @@ public class onAddEdit3rdAddrBean
 	private boolean authed;
 	private String roleName$;
 	private boolean authed;
+	private List sL;
 	
 	public void init( HttpServletRequest requestArg, JspWriter outArg){
 		out = outArg;
@@ -45,8 +46,14 @@ public class onAddEdit3rdAddrBean
         String user_no = (String) session.getAttribute("user");
     }
 
-    
-    
+    public void setPropertyList(){
+    	List sL = dbObj.get3rdAddrNameList();
+    }
+
+    publict List getPropertyList(){
+    	return sL;
+    }
+
 
     public void public void handleRequestSubmit() throws IOExecution{
     	int serviceCodeLen = 5;

@@ -189,16 +189,7 @@ if(!bean.getAuthed()) {
 			id="company_name">
 			<option selected="selected" value="">- choose one -</option>
 			<%//
-			    List sL = dbObj.get3rdAddrNameList();
-				for (int i = 0; i < sL.size(); i++) {
-					Properties propT = (Properties) sL.get(i);
-			%>
-
-			<option value="<%=propT.getProperty("company_name", "")%>">
-				<%=propT.getProperty("company_name", "")%>
-			</option>
-			
-			<% } %>
+			    bean.print3rdPartyDropDown()%>
 
 		</select></td>
 		<td><input type="hidden" name="submit" value="Search"> <input
